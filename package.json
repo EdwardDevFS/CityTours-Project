@@ -1,0 +1,27 @@
+{
+  "name": "citytours-project",
+  "version": "1.0.0",
+  "description": "Proyecto final seminario",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdwardDevFS/CityTours-Project.git"
+  },
+  "keywords": [
+    "Project",
+    "CityTours"
+  ],
+  "author": "Edward Mamani - Fernando Colla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdwardDevFS/CityTours-Project/issues"
+  },
+  "homepage": "https://github.com/EdwardDevFS/CityTours-Project#readme",
+  "dependencies": {
+    "sass": "^1.56.1",
+    "scss": "^0.2.4"
+  }
+}

@@ -59,7 +59,7 @@
 			<br>
 			<br>
 			<br>
-				<a class="btn btn-success" href="crear_usuario.php">Crear Usuario</a>
+				<a class="btn btn-success" href="./secciones/registro.php">Crear Usuario</a>
 		</div>
 		
 		<div class="row">

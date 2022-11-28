@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none !important;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+
+body{
+    background-color: #29323c;
+    color: white;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 1em;
+    max-height: 10em;
+    background-color: #272c30;
+    
+}
+
+a{
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    color: white;
+}
+footer{
+    width: 100%;
+    min-height: 1em;
+    max-height: 10em;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: #0b0b0c;
+    position: fixed;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+}
+nav{
+    padding: 1rem 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     z-index: 1;
+}
+main{
+    margin-top: 6.6em;
+
+    display: block;
+    width: 100%;
+    z-index: -1;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+
+
+
+
+.titulo-login{
+    position: fixed;
+    width: 100%;
+    padding: .2em 0;
+    
+    letter-spacing: 0.5px;
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.66);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.66);
+    background-color: #29323c;
+    h1{
+        color: antiquewhite;
+        font-size: 2.5em; 
+        font-weight: bold;
+        
+    }
+    button{
+        position: absolute;
+        padding: .5em 1.5rem;
+        margin: 15px 0 15px 30px;
+        color: antiquewhite;
+        cursor: pointer;
+    }
+    svg{
+        color:aliceblue;
+    }
+}
+
+
+.title-form-login{
+    font-size: 4rem;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.content-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: rgb(255,172,0);
+background: linear-gradient(290deg, rgba(255,172,0,0.8987766981792717) 29%, rgba(41,46,60,0.9772080707282913) 77%); 
+    
+}
+.left-f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.right-f{
+    background-image: linear-gradient(to right, rgb(255 170 0 / 45%) 0%, rgba(41, 46, 60, 0.397) 100%) ,url(https://i.pinimg.com/originals/18/69/d4/1869d483854e02873078a4ae709948de.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: inherit;
+    
+    width: 50%;
+    height: 89vh;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2{ 
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 3em;
+        font-weight: 900;
+        background-color: rgba(0, 0, 0, 0.679);
+        padding: .5em;
+        border-radius: .5em;
+    }
+
+}
+.mark-2{
+
+    margin: 0px 50px;
+}
+.navBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+}
+.cuadro-form{
+    width: 35em;
+    height: 35em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.boton-login{
+    margin-top: 15px;
+}
+.down-form{
+    align-items: center;
+    justify-content: space-between;
+    margin: 0em  0 0;
+    a{
+        margin-right: 15px;
+        margin-top: 10px;
+    }
+    small{
+        color: rgb(255, 255, 255);
+        margin-left: 4px;
+        &:hover{
+            color: rgb(193, 193, 193);
+        }
+    }
+    button{
+        margin-top: 1.5rem;
+        padding: .7em 2em;
+        
+    }
+    
+} 
+.anime{
+    color: aqua;
+}
+.form-login{
+    width: 90%;
+    background-color:#000000a2 ; 
+    border-radius: 1em;
+    
+}
+.input-form{
+    width: 100%;
+    height: 2.5em;
+    border-radius: .3em;
+    border: 0 !important;
+    margin-top: 5px;
+    padding: 1em;
+    background-color: #000000a2 ; 
+
+}
+.form-input{
+    color: rgb(255, 255, 255);
+    border: 0;
+    
+}
