@@ -11,11 +11,10 @@
 		crossorigin="anonymous">
     <!-- Link to css citytours -->
     <link rel="stylesheet" href="../Sass/registro.scss">
-    <title>Registro</title>
+    <title>Modificación</title>
 </head>
 <body>
-    
-    <header class="contenedor-header">
+<header class="contenedor-header">
         <nav class="navBar">
             <h1 class="title-form-login text-center">City<span style="color: rgb(255,172,0);">Tours</span></h1>
             <small class="text-center">A disposición de las <span style="color: rgb(255,172,0);">necesidades del cliente.</span></small>
@@ -28,7 +27,7 @@
                     <div class="form-login">
                         <form class="needs-validation"  novalidate>
                             <div class="intro-form m-2 px-4">
-                                <h2 class="title-form-login text-center">Regi<span style="color: rgb(255,172,0);">stro</span></h2>
+                                <h2 class="title-form-login text-center">Modi<span style="color: rgb(255,172,0);">ficar</span></h2>
                                 <br>
                                 <div class="form-input mb-2">
                                     <label for="floatingInput">Lugar Turístico</label>

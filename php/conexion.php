@@ -1,7 +1,7 @@
 <?php
 	
     class conexion{
-		private static $base_datos = "dbcitytours";
+		private static $base_datos = "CityTours";
 		private static $servidor = "localhost";
 		private static $username = "root";
 		private static $password="";
