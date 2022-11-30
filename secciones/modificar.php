@@ -1,3 +1,13 @@
+<?php
+	require_once "../php/sitios.php";
+
+	if(!empty($_GET)){
+		$lug_t = new Sitios();
+		$lug_t->load($_GET['id']);
+	}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,37 +35,37 @@
             <div class="left-f">
                 <div class="cuadro-form">
                     <div class="form-login">
-                        <form class="needs-validation"  novalidate>
+                        <form action="../php/procesar_sitio.php" data-toggle="validator" method="POST" class="needs-validation"  novalidate>
                             <div class="intro-form m-2 px-4">
                                 <h2 class="title-form-login text-center">Modi<span style="color: rgb(255,172,0);">ficar</span></h2>
                                 <br>
                                 <div class="form-input mb-2">
                                     <label for="floatingInput">Lugar Turístico</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom03" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getLugar(); ?>" id="validationCustom03" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Descripción</label>
-                                    <input type="password" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getDescripcion(); ?>" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword">Ciudad</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getCiudad(); ?>" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Teléfono</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getTelefono(); ?>" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Horario de Atención</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getHorario(); ?>" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Imágenes</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getUrl(); ?>" id="validationCustom05" required>
                                 </div>
                                 <div class="mt-2 d-flex down-form">
-                                    <a href="../index.php"><small>Volver Atras</small></a>
-                                    <button id="btn-login" class="btn btn-dark boton-login" type="submit">Enviar</button>
+
+                                    <a href="http://localhost/CityTours-Project/index.php" id="btn-login" class="btn btn-dark boton-login" type="submit">Enviar</a>
                                 </div>
                             </div>
                         </form>
@@ -64,7 +74,6 @@
             </div>
             <div class="right-f">
                 <div class="mark-2">
-                    <h2>¡Inicia sesión para conectarte a un nuevo universo! <br> <span>楽しんでください！</span></h2>
                 </div>
             </div>
         </div>

@@ -1,3 +1,15 @@
+<?php
+	require_once "../php/sitios.php";
+	$lug_t = new Sitios();
+
+	if(!empty($_GET)){
+		$lug_t->load($_GET['id']);
+	}else{
+		$lug_t->poblarPropiedades(array());
+	}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,33 +38,33 @@
             <div class="left-f">
                 <div class="cuadro-form">
                     <div class="form-login">
-                        <form class="needs-validation"  novalidate>
+                        <form class="needs-validation"  action="../php/procesar_sitio.php" data-toggle="validator" method="POST" novalidate>
                             <div class="intro-form m-2 px-4">
                                 <h2 class="title-form-login text-center">Regi<span style="color: rgb(255,172,0);">stro</span></h2>
                                 <br>
                                 <div class="form-input mb-2">
                                     <label for="floatingInput">Lugar Turístico</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom03" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getLugar(); ?>" name="lugar" id="validationCustom03" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Descripción</label>
-                                    <input type="password" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getDescripcion(); ?>" name="descripcion" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword">Ciudad</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getCiudad(); ?>" name="ciudad" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Teléfono</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getTelefono(); ?>" name="telefono" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Horario de Atención</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getHorario(); ?>" name="horario" id="validationCustom05" required>
                                 </div>
                                 <div class="form-input mb-2">
                                     <label for="floatingPassword ">Imágenes</label>
-                                    <input type="text" class="form-control text-bg-dark input-form" id="validationCustom05" required>
+                                    <input type="text" class="form-control text-bg-dark input-form" value="<?php echo $lug_t->getUrl(); ?>" name="url" id="validationCustom05" required>
                                 </div>
                                 <div class="mt-2 d-flex down-form">
                                     <a href="../index.php"><small>Volver Atras</small></a>

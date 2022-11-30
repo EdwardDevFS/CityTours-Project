@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,7 +45,7 @@
 					</thead>
 					
 					<tbody>
-						<tr>
+						
 						<?php
 							require_once "php/conexion.php";
 							$pdo = conexion::connect();
@@ -52,7 +54,8 @@
 
 							foreach($pdo->query($sql) as $row){
 								$img = $row['url'];
-									echo "<td> {$row['lugar']} </td>";
+								echo '<tr>';
+									echo "<td id=`lugar`> {$row['lugar']} </td>";
 									echo "<td> {$row['descripcion']} </td>";
 									echo "<td> {$row['ciudad']} </td>";
 									echo "<td> {$row['telefono']} </td>";
@@ -60,37 +63,41 @@
 									echo "<td>
 									
 									<a href='#' data-bs-toggle='modal' data-bs-target='#exampleModal'><img src='{$img}'></a>";
-									echo '
-									';
-							}
+									echo "<td class='actions'>	
+										<a href='./secciones/registro.php?id={$row['ID']}'>
+										
+										<button 
+											class='edit' 
+											data-bs-toggle='tooltip' 
+											data-bs-placement='top'
+											data-bs-custom-class='custom-tooltip'
+											data-bs-title='Modificar'>
+											<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='white' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+												<path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
+												<path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
+											</svg>
+										</button>
+									</a>
+									<a href='./secciones/borrar_lugar.php?id={$row['ID']}'>
+										<button 
+											class='delete'
+											id='deleted'
+											onclick='asd()'
+											data-bs-toggle='tooltip' 
+											data-bs-placement='top'
+											data-bs-custom-class='custom-tooltip'
+											data-bs-title='Eliminar'>
+											<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='white' class='bi bi-trash' viewBox='0 0 16 16'>
+												<path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z'/>
+												<path fill-rule='evenodd' d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z'/>
+											</svg>
+										</button>
+										</a>
+									</td>";
+									echo '</tr>';
+								}
 						?>
-						<td class="actions">	
-							<a href="./secciones/modificar.php">
-								<button 
-									class="edit" 
-									data-bs-toggle="tooltip" 
-									data-bs-placement="top"
-									data-bs-custom-class="custom-tooltip"
-									data-bs-title="Modificar">
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">
-										<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-										<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-									</svg>
-								</button>
-							</a>
-								<button 
-									class="delete"
-									id="deleted"
-									data-bs-toggle="tooltip" 
-									data-bs-placement="top"
-									data-bs-custom-class="custom-tooltip"
-									data-bs-title="Eliminar">
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-trash" viewBox="0 0 16 16">
-											<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-											<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-									</svg>
-								</button>
-							</td>
+						
 						</tr>
 					</tbody>
 				</table>
@@ -98,7 +105,7 @@
 		</div>
 	</section>	
 	<!-- JavaScript Bundle with Popper -->
-	
+		<?php $acs = "{$row['ID']}"; ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
 		crossorigin="anonymous" ></script>
@@ -108,37 +115,9 @@
 	</script>
 
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script >
-		let boton = document.getElementById('deleted');
-		boton.addEventListener('click', function(){
-			const swalWithBootstrapButtons = Swal.mixin({
-			customClass: {
-				confirmButton: 'btn btn-success',
-				cancelButton: 'btn btn-danger'
-			},
-			buttonsStyling: false
-			})
 
-			swalWithBootstrapButtons.fire({
-			title: '¿Estás seguro?',
-			text: "Si acepta, se eliminará el archivo permanentemente",
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonText: 'Sí, Elíminalo',
-			cancelButtonText: 'No, Cancelar',
-			reverseButtons: true
-			}).then((result) => {
-				if (result.isConfirmed) {
-					swalWithBootstrapButtons.fire(
-					'Afirmativo',
-					'El archivo ha sido eliminado',
-					'success'
-					)
-					console.log('a'+ <?php echo $img;?>);
-					
-				} 
-			})
-			})
+	<script defer>
+
 	</script>
 	<!--sweet alert -->
 	
